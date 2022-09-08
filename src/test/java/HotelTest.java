@@ -29,9 +29,16 @@ public class HotelTest {
 
     @Test
     public void canGuestCheckIn(){
-        hotel.addBedroom(bedroom1);
-        bedroom1.addGuest(guest1);
+        hotel.guestCheckIn(guest1, bedroom1);
         assertEquals(1, bedroom1.getGuestList());
     }
+
+    @Test
+    public void canGuestCheckOut(){
+        hotel.guestCheckIn(guest1, bedroom1);
+        hotel.guestCheckOut(bedroom1);
+        assertEquals(0, bedroom1.getGuestList());
+    }
+
 
 }

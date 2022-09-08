@@ -28,6 +28,9 @@ public class Hotel {
     public void guestCheckIn(Guest guest, Bedroom bedroom){
         addBedroom(bedroom);
         bedroom.addGuest(guest);
-//        Array.get(bedroomList,0);
+    }
+
+    public void guestCheckOut(Bedroom bedroom){
+        bedroom.removeGuest(bedroom);
     }
 }
